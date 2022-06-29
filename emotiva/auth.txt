@@ -1,0 +1,156 @@
+--------------------------------------------------------------------------------------------------------------------------
+----------FROM AWS--------------------------------------------------------------------------------------------------------
+----------https://docs.aws.amazon.com/codeartifact/latest/ug/python-configure-without-pip.html----------------------------
+--------------------------------------------------------------------------------------------------------------------------
+
+If you cannot use the login command to configure pip, you can use pip config.
+
+Use the AWS CLI to fetch a new authorization token.
+
+Note
+If you are accessing a repository in a domain that you own, you do not need to include the --domain-owner. For more information, see Cross-account domains.
+
+CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain my_domain --domain-owner 111122223333 --query authorizationToken --output text`
+Use pip config to set the CodeArtifact registry URL and credentials.
+
+pip config set global.index-url https://aws:$CODEARTIFACT_AUTH_TOKEN@my_domain-111122223333.d.codeartifact.region.amazonaws.com/pypi/my_repo/simple/
+Important
+The registry URL must end with a forward slash (/). Otherwise, you cannot connect to the repository.
+
+Example pip configuration file
+
+The following is an example of a pip.conf file after setting the CodeArtifact registry URL and credentials.
+
+[global]
+index-url = https://aws:eyJ2ZX...@my_domain-111122223333.d.codeartifact.us-west-2.amazonaws.com/pypi/my_repo/simple/
+
+
+----------BY EMOTIVA------------------------------------------------------------------------------------------------------
+
+for /f %i in ('aws codeartifact get-authorization-token --domain emotiva --domain-owner 738822722489 --query authorizationToken --output text') do set CODEARTIFACT_AUTH_TOKEN
+
+pip config set global.extra-index-url https://aws:eyJ2ZXIiOjEsImlzdSI6MTYzOTc1NTEwOSwiZW5jIjoiQTEyOEdDTSIsInRhZyI6Imo0VjQybHdoUzNtTDkxYmdXS2EwUGciLCJleHAiOjE2Mzk3OTgzMDksImFsZyI6IkExMjhHQ01LVyIsIml2IjoiOVd6TWU2NWd3bXplU19UUCJ9.qrP2B2gILYagU_yG-1jYhA.j3m-zjuFn4U5UpVU.A08el3diQeD0klYmuPy9FX5GoCH2fLi8WBu9kMDx15CBGOL0jbOp-8z7uHYrJeyk7hSkuSpjAf1kiy-BNe37hU5D1hOQevfued02zFzVbUGkclIuDfk-Zxd4eWFeezUyaYQlZ_tsFA-lobJn28obF22km3i1FldlArdWm5cNGZ80GSxvxMcA2JRT1QAUdozReILAmcCufn_So5-muicx5faYa13qiGgD3cXus0kV7yQ9QumUPVzVna2ED9czow_Xpnjf6rwV5fmpFQvKnaWSjj-NO5661DyuysOoeAqA9Fkb3Tvvalrz6VzC4owG859TYRkkb02lT95vP2PcBfZILIE3jDwdgKnT3K95fg7vqHUDOzXzF_ukx73ub7JY9YDih3RPaBdtM6_HJPys5f6j6GmCKKluFpx9DC-IkIBSalUdMDZirvqcqgAba_tw0HG1eHtCBLmPwsvqhrwBOS2KBLOUEI8_KnJ-Hod0_9wYUCY8GoP8Mo36Zx2d5VpFa5h02oxgIqdQFizkRVwvy81QtqcmurSNw_pP9AmHlJ3nhHEps356CW_JPl302f1ZkpVhVMHOdtYYHKD-wePXh7F5wD52MMH28IhZ88ReeFIq2kPg0Pewn__9bEYlUgNlrjW-fSJ6vbe7iZJFBFA0K7Bg-gdRkdBpKrUDCPBy8jWNJIpPo8FL2zLF7AU9gMCdAakHdotCyWvzQMkzcJ8lpgovYQkuUxmdb1eS4ffyWmQO-0wrHFo7sngODKeA3KiJewsmCFhdWkf6EGD_wrvfVd56LFmxQtRACHlaqqvfNsYTCB-mu-S15-m7aPyiRVmlT9LX_Kt-jvwl9j6wjt2PNTm1IJ4YwZPeEwMHB5QEQPnEPmcZqeEQlM277ogmB6IkKhENJh0RZIofZIl9JSptureSj6_2qcpfD-9IwtBeaiWzYrmjwv5VhDjtZTVE-PWlIA.7J_eDSxZOcPz1B0eCLpg6Q@emotiva-738822722489.d.codeartifact.eu-central-1.amazonaws.com/pypi/emautionanalysis/simple/
+
+aws codeartifact get-authorization-token --domain emotiva --domain-owner 738822722489 --query authorizationToken --output text
+
+--------------------------------------------------------------------------------------------------------------------------
+
+C:\Users\FACETeam>pip install emaution-analysis
+Defaulting to user installation because normal site-packages is not writeable
+Looking in indexes: https://pypi.org/simple, https://aws:****@emotiva-738822722489.d.codeartifact.eu-central-1.amazonaws.com/pypi/emautionanalysis/simple/
+Collecting emaution-analysis
+  Using cached https://emotiva-738822722489.d.codeartifact.eu-central-1.amazonaws.com/pypi/emautionanalysis/simple/emaution-analysis/1.1.2/emaution-analysis-1.1.2.tar.gz (43 kB)
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: numpy<1.21 in c:\users\faceteam\appdata\roaming\python\python38\site-packages (from emaution-analysis) (1.20.3)
+Requirement already satisfied: opencv-contrib-python==4.5.3.56 in c:\users\faceteam\appdata\roaming\python\python38\site-packages (from emaution-analysis) (4.5.3.56)
+Requirement already satisfied: cmake in c:\users\faceteam\appdata\roaming\python\python38\site-packages (from emaution-analysis) (3.22.1)
+Requirement already satisfied: wheel in c:\users\faceteam\appdata\roaming\python\python38\site-packages (from emaution-analysis) (0.37.0)
+Collecting dlib==19.22.1
+  Using cached dlib-19.22.1.tar.gz (7.4 MB)
+  Preparing metadata (setup.py) ... done
+Collecting boto3>=1.18.56
+  Using cached boto3-1.20.24-py3-none-any.whl (131 kB)
+Collecting tqdm>=4.62.3
+  Using cached tqdm-4.62.3-py2.py3-none-any.whl (76 kB)
+Collecting torch==1.9.0
+  Using cached torch-1.9.0-cp38-cp38-win_amd64.whl (222.0 MB)
+Collecting torchvision==0.10.0
+  Using cached torchvision-0.10.0-cp38-cp38-win_amd64.whl (920 kB)
+Collecting scikit-learn==1.0
+  Using cached scikit_learn-1.0-cp38-cp38-win_amd64.whl (7.2 MB)
+Collecting scikit-multilearn==0.2.0
+  Using cached scikit_multilearn-0.2.0-py3-none-any.whl (89 kB)
+Collecting imutils>=0.5.4
+  Using cached imutils-0.5.4.tar.gz (17 kB)
+  Preparing metadata (setup.py) ... done
+Collecting PyYAML>=5.4.1
+  Using cached PyYAML-6.0-cp38-cp38-win_amd64.whl (155 kB)
+Collecting PyWavelets==1.1.1
+  Using cached PyWavelets-1.1.1-cp38-cp38-win_amd64.whl (4.3 MB)
+Collecting scikit-image>=0.18.3
+  Using cached scikit_image-0.19.1-cp38-cp38-win_amd64.whl (12.5 MB)
+Collecting mediapipe==0.8.7.3
+  Using cached mediapipe-0.8.7.3-cp38-cp38-win_amd64.whl (46.3 MB)
+Collecting imblearn==0.0
+  Using cached imblearn-0.0-py2.py3-none-any.whl (1.9 kB)
+Collecting face-alignment==1.3.5
+  Using cached face_alignment-1.3.5.tar.gz (27 kB)
+  Preparing metadata (setup.py) ... done
+Collecting scipy>=0.17
+  Using cached scipy-1.7.3-cp38-cp38-win_amd64.whl (34.2 MB)
+Collecting opencv-python
+  Using cached opencv_python-4.5.4.60-cp38-cp38-win_amd64.whl (35.1 MB)
+Collecting numba
+  Using cached numba-0.54.1-cp38-cp38-win_amd64.whl (2.3 MB)
+Collecting imbalanced-learn
+  Using cached imbalanced_learn-0.8.1-py3-none-any.whl (189 kB)
+Collecting absl-py
+  Using cached absl_py-1.0.0-py3-none-any.whl (126 kB)
+Collecting protobuf>=3.11.4
+  Using cached protobuf-3.19.1-cp38-cp38-win_amd64.whl (895 kB)
+Collecting attrs>=19.1.0
+  Using cached attrs-21.2.0-py2.py3-none-any.whl (53 kB)
+Collecting six
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting matplotlib
+  Using cached matplotlib-3.5.1-cp38-cp38-win_amd64.whl (7.2 MB)
+Collecting joblib>=0.11
+  Using cached joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+Collecting threadpoolctl>=2.0.0
+  Using cached threadpoolctl-3.0.0-py3-none-any.whl (14 kB)
+Collecting typing-extensions
+  Using cached typing_extensions-4.0.1-py3-none-any.whl (22 kB)
+Collecting pillow>=5.3.0
+  Using cached Pillow-8.4.0-cp38-cp38-win_amd64.whl (3.2 MB)
+Collecting botocore<1.24.0,>=1.23.24
+  Using cached botocore-1.23.24-py3-none-any.whl (8.4 MB)
+Collecting s3transfer<0.6.0,>=0.5.0
+  Using cached s3transfer-0.5.0-py3-none-any.whl (79 kB)
+Collecting jmespath<1.0.0,>=0.7.1
+  Using cached jmespath-0.10.0-py2.py3-none-any.whl (24 kB)
+Collecting networkx>=2.2
+  Using cached networkx-2.6.3-py3-none-any.whl (1.9 MB)
+Collecting imageio>=2.4.1
+  Using cached imageio-2.13.3-py3-none-any.whl (3.3 MB)
+Collecting packaging>=20.0
+  Using cached packaging-21.3-py3-none-any.whl (40 kB)
+Collecting tifffile>=2019.7.26
+  Using cached tifffile-2021.11.2-py3-none-any.whl (178 kB)
+Collecting colorama
+  Using cached colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+Collecting urllib3<1.27,>=1.25.4
+  Using cached urllib3-1.26.7-py2.py3-none-any.whl (138 kB)
+Collecting python-dateutil<3.0.0,>=2.1
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Using cached pyparsing-3.0.6-py3-none-any.whl (97 kB)
+Collecting cycler>=0.10
+  Using cached cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting kiwisolver>=1.0.1
+  Using cached kiwisolver-1.3.2-cp38-cp38-win_amd64.whl (52 kB)
+Collecting fonttools>=4.22.0
+  Using cached fonttools-4.28.4-py3-none-any.whl (885 kB)
+Collecting llvmlite<0.38,>=0.37.0rc1
+  Using cached llvmlite-0.37.0-cp38-cp38-win_amd64.whl (17.0 MB)
+Requirement already satisfied: setuptools in c:\program files\python38\lib\site-packages (from numba->face-alignment==1.3.5->emaution-analysis) (49.2.1)
+Building wheels for collected packages: emaution-analysis, dlib, face-alignment, imutils
+  Building wheel for emaution-analysis (setup.py) ... done
+  Created wheel for emaution-analysis: filename=emaution_analysis-1.1.2-py3-none-any.whl size=58907 sha256=2694438856546d08da65a33ecae4081f88bf08de554a9fbf9aa57259c5b41119
+  Stored in directory: c:\users\faceteam\appdata\local\pip\cache\wheels\32\82\5e\3283d953dcde3352d179abb3d6e89d0971f76f1809ba08f67f
+  Building wheel for dlib (setup.py) ... done
+  Created wheel for dlib: filename=dlib-19.22.1-cp38-cp38-win_amd64.whl size=2949164 sha256=f6108515c8fef21846e642192f54f3975fb538693df0008c1b5ed1c1489a06b0
+  Stored in directory: c:\users\faceteam\appdata\local\pip\cache\wheels\c3\7d\3d\896cb44b682ef7c2c080d7d5d312ce8ba253aa4b03f858d398
+  Building wheel for face-alignment (setup.py) ... done
+  Created wheel for face-alignment: filename=face_alignment-1.3.5-py2.py3-none-any.whl size=28239 sha256=ce7d16c53d01ae6782ebb9a8a970d674bc14830c0fbd9e8bbcf5e16a2bdc7221
+  Stored in directory: c:\users\faceteam\appdata\local\pip\cache\wheels\32\21\d8\7bf61c86e3a6c5af8f118708d4c9c26512dbd1c913a0b97c8a
+  Building wheel for imutils (setup.py) ... done
+  Created wheel for imutils: filename=imutils-0.5.4-py3-none-any.whl size=25859 sha256=dbee0982b74bd53572c77a8ead062606f594c677efb3f36620f2c78942d34837
+  Stored in directory: c:\users\faceteam\appdata\local\pip\cache\wheels\59\1b\52\0dea905f8278d5514dc4d0be5e251967f8681670cadd3dca89
+Successfully built emaution-analysis dlib face-alignment imutils
+Installing collected packages: six, urllib3, threadpoolctl, scipy, python-dateutil, pyparsing, pillow, joblib, jmespath, typing-extensions, tifffile, scikit-learn, PyWavelets, packaging, networkx, llvmlite, kiwisolver, imageio, fonttools, cycler, colorama, botocore, tqdm, torch, scikit-image, s3transfer, protobuf, opencv-python, numba, matplotlib, imbalanced-learn, attrs, absl-py, torchvision, scikit-multilearn, PyYAML, mediapipe, imutils, imblearn, face-alignment, dlib, boto3, emaution-analysis
+Successfully installed PyWavelets-1.1.1 PyYAML-6.0 absl-py-1.0.0 attrs-21.2.0 boto3-1.20.24 botocore-1.23.24 colorama-0.4.4 cycler-0.11.0 dlib-19.22.1 emaution-analysis-1.1.2 face-alignment-1.3.5 fonttools-4.28.4 imageio-2.13.3 imbalanced-learn-0.8.1 imblearn-0.0 imutils-0.5.4 jmespath-0.10.0 joblib-1.1.0 kiwisolver-1.3.2 llvmlite-0.37.0 matplotlib-3.5.1 mediapipe-0.8.7.3 networkx-2.6.3 numba-0.54.1 opencv-python-4.5.4.60 packaging-21.3 pillow-8.4.0 protobuf-3.19.1 pyparsing-3.0.6 python-dateutil-2.8.2 s3transfer-0.5.0 scikit-image-0.19.1 scikit-learn-1.0 scikit-multilearn-0.2.0 scipy-1.7.3 six-1.16.0 threadpoolctl-3.0.0 tifffile-2021.11.2 torch-1.9.0 torchvision-0.10.0 tqdm-4.62.3 typing-extensions-4.0.1 urllib3-1.26.7
+
+
+
+
+

@@ -1,0 +1,5 @@
+@echo off
+:: Note: Do NOT use `setlocal` here
+set "EMOTIVA_CFG_PATH=C:\Users\FACETeam\Desktop\EMOTIVA"
+set "EMOTIVA_ACCESS_KEY=AKIA2YBKECO456E6DPEX"
+set "EMOTIVA_SECRET_KEY=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"
