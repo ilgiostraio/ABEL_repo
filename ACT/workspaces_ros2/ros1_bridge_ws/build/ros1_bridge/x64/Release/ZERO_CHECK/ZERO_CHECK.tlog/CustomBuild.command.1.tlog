@@ -1,0 +1,10 @@
+^C:\WORKSPACES_ROS2\ROS1_BRIDGE_WS\BUILD\ROS1_BRIDGE\CMAKEFILES\A995CA0078BB2A9737B3C95ACCA482FC\GENERATE.STAMP.RULE
+setlocal
+C:\opt\ros\noetic\x64\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/workspaces_ros2/ros1_bridge_ws/src/ros1_bridge -BC:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge/ros1_bridge.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

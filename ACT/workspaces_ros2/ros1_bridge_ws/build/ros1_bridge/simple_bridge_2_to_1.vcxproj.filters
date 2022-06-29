@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\workspaces_ros2\ros1_bridge_ws\src\ros1_bridge\src\simple_bridge_2_to_1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\workspaces_ros2\ros1_bridge_ws\src\ros1_bridge\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FA783785-A839-3977-9E52-C3FA997164BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

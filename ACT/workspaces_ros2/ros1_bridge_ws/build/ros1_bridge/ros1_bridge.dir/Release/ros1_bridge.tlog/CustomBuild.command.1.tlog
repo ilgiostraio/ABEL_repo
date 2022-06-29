@@ -1,0 +1,24 @@
+^C:\WORKSPACES_ROS2\ROS1_BRIDGE_WS\BUILD\ROS1_BRIDGE\CMAKEFILES\16928DA486BCA987A89B1103C2162904\GET_FACTORY.CPP.RULE
+setlocal
+cd C:\workspaces_ros2\ros1_bridge_ws\src\ros1_bridge
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\opt\ros\foxy\x64\python.exe bin/ros1_bridge_generate_factories --output-path C:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge/generated --template-dir resource
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\WORKSPACES_ROS2\ROS1_BRIDGE_WS\SRC\ROS1_BRIDGE\CMAKELISTS.TXT
+setlocal
+C:\opt\ros\noetic\x64\Lib\site-packages\cmake\data\bin\cmake.exe -SC:/workspaces_ros2/ros1_bridge_ws/src/ros1_bridge -BC:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge --check-stamp-file C:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
