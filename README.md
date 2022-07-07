@@ -4,7 +4,7 @@ Applications are divided in the three conceptual blocks SENSE, PLAN and ACT, acc
 
 More detailed info will be added asap
 
-the architecture uses as middlware both YARP (v2.3.63, pre-compiled) and ROS, a yarp-bridge ros is available in the dedicated folder
+the architecture uses as middlware both YARP (v2.3.63, pre-compiled) and ROS Noetic, a yarp-bridge ros is available in the dedicated folder
 
 to work on the deliberative cognitive part (inside PLAN) please download CLIPS (C Language Integrated Production System)
 check this link https://www.clipsrules.net/ to download both the open-source application and the documentation, other parts are implemented in C# or Python
