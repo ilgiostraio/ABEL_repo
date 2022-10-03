@@ -1,2 +1,0 @@
-franka_ros-release;moveit_tutorials;panda_moveit_config
--DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=c:\moveit_ws\devel -DCMAKE_INSTALL_PREFIX=c:\moveit_ws\install -G Ninja

@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "C:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge/Release/ros1_bridge.dll" "C:/workspaces_ros2/ros1_bridge_ws/build/ros1_bridge/Release/ros1_bridge.lib" "TARGETS" "ros1_bridge" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

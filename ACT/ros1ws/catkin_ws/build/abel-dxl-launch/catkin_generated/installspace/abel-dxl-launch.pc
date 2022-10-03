@@ -1,8 +1,0 @@
-prefix=C:/ros1ws/catkin_ws/install
-
-Name: abel-dxl-launch
-Description: Description of abel-dxl-launch
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

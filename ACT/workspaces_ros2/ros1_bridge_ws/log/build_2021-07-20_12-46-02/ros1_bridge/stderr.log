@@ -1,7 +1,0 @@
-CMake Warning (dev) at cmake/find_ros1_interface_packages.cmake:53 (set):
-  Only the first value argument is used when setting an environment variable.
-  Argument 'C:\opt\ros\noetic\x64\lib/site-packages' and later are unused.
-Call Stack (most recent call first):
-  CMakeLists.txt:46 (find_ros1_interface_packages)
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
