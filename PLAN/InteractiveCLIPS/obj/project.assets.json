@@ -9,20 +9,20 @@
     ".NETFramework,Version=v4.6.2": []
   },
   "packageFolders": {
-    "C:\\Users\\FACETeam\\.nuget\\packages\\": {}
+    "C:\\Users\\komil\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FACETeam\\Documents\\GitRepo\\PLAN\\InteractiveCLIPS\\InteractiveCLIPS.csproj",
+      "projectUniqueName": "C:\\Users\\komil\\Documents\\GitHub\\ABEL_repo\\PLAN\\InteractiveCLIPS\\InteractiveCLIPS.csproj",
       "projectName": "InteractiveCLIPS",
-      "projectPath": "C:\\Users\\FACETeam\\Documents\\GitRepo\\PLAN\\InteractiveCLIPS\\InteractiveCLIPS.csproj",
-      "packagesPath": "C:\\Users\\FACETeam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FACETeam\\Documents\\GitRepo\\PLAN\\InteractiveCLIPS\\obj\\",
+      "projectPath": "C:\\Users\\komil\\Documents\\GitHub\\ABEL_repo\\PLAN\\InteractiveCLIPS\\InteractiveCLIPS.csproj",
+      "packagesPath": "C:\\Users\\komil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\komil\\Documents\\GitHub\\ABEL_repo\\PLAN\\InteractiveCLIPS\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\FACETeam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\komil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -47,7 +47,7 @@
     "frameworks": {
       "net462": {
         "targetAlias": "net462",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
